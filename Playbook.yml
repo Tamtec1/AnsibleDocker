@@ -1,0 +1,12 @@
+- name: Docker launch container
+  hosts: all
+  tasks:
+    - name: Create a data container
+        community.docker.docker_container:
+          name: my-ghost
+          image: ghost
+          state: started
+          ports: 
+            - "3001:2368"
+          
+
